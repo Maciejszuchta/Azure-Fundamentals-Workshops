@@ -153,4 +153,3 @@ Now you will plan your `Sprint`
 7. Move to the cloned folder by typing `cd ecommerce.webapp` in terminal
 8. Create new dotnet web app by typing `dotnet new webapp` in terminal
 9. Open it in VS Code
-10. TODO
