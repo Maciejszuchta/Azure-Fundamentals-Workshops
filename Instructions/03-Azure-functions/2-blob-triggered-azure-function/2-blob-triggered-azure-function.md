@@ -107,8 +107,9 @@ In this task, we will implement the resize functionality, we will add 3 **output
     | Storage account connection | **AzureWebJobsStorage** |
 
 2. To make it possible to resize images, we need to use external library, for example the `SixLabors.ImageResize`.
+   ![image](https://user-images.githubusercontent.com/12434636/165079293-494f8d62-9e84-46aa-8417-49c4c39b7299.png)
 
-    To do that navigate to you function and edit function.json file. We need to add to the file information what external library we want to use in our function.
+    To do that, navigate to you function and edit function.json file. We need to add to the file information what external library we want to use in our function.
     `"dependancies": {
          "SixLabors.ImageSharp": "1.0.3"
      }`
