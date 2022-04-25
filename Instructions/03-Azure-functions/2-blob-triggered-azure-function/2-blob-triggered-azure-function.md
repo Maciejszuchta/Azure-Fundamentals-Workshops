@@ -106,30 +106,17 @@ In this task, we will implement the resize functionality, we will add 3 **output
     | Path                       | **medium/md-{name}**    |
     | Storage account connection | **AzureWebJobsStorage** |
 
-2. To make it possible to resize images, we need to use external library, for example the `SixLabors.ImageResize`, you can add it by uploading the `function.proj` file to the Function. Navigate to **Code + test** tab, hit upload button, and search in instruction for this exercise file `function.proj`
-    ![function-app-upload-function-proj-file](/assets/function-app-upload-function-proj-file.PNG)
+2. To make it possible to resize images, we need to use external library, for example the `SixLabors.ImageResize`.
 
-3. Switch to `function.proj` file, by expanding the dropdown list in the bradcrumbs 
-   ![function-app-navigate-to-function-proj-file](/assets/function-app-navigate-to-function-proj-file.PNG)
-4. Paste the following code, and hit **Save**
-   ```xml
-    <Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
-    </PropertyGroup>
-
-    <ItemGroup>
-            <PackageReference Include="SixLabors.ImageSharp" Version="1.0.3" />
-    </ItemGroup>
-    </Project>
-   ```
-   
-   ![function-app-pastes-proj-code](/assets/function-app-pastes-proj-code.PNG)
+    To do that navigate to you function and edit function.json file. We need to add to the file information what external library we want to use in our function.
+    `"dependancies": {
+         "SixLabors.ImageSharp": "1.0.3"
+     }`
 
    You should see in **Logs**, that the function respond to the changes, and restore the necessary packages for your application
    ![function-app-saved-proj](/assets/function-app-saved-proj.PNG)
 
-5. Switch to `run.csx` file, add resize functionality by pasting the following code into function editor, and hit **Save**.
+3. Switch to `run.csx` file, add resize functionality by pasting the following code into function editor, and hit **Save**.
 
     ```cs
     using System.Collections.Generic;
@@ -185,7 +172,7 @@ In this task, we will implement the resize functionality, we will add 3 **output
 
     ![function-app-custome-code](/assets/function-app-custome-code.PNG)
 
-6. Upload image to your `uploaded` container, and check the **Logs** of your function, after it successfully run, navigate to your storage account, and see additional containers were added `extra-small`, `small`, and `medium`, each has its resized image with prefix.
+4. Upload image to your `uploaded` container, and check the **Logs** of your function, after it successfully run, navigate to your storage account, and see additional containers were added `extra-small`, `small`, and `medium`, each has its resized image with prefix.
     ![function-app-result](/assets/function-app-result.PNG)
 
 **Congratulations!** You have created a Function App that respond for uploaded images with the resize functionality.  
