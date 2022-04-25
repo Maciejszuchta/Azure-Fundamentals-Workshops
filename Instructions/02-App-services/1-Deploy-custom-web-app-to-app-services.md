@@ -1,5 +1,5 @@
 
-# 02/1 - Deploy custom web app to App Services
+# 02 - Deploy custom web app to App Services
 
 In this walkthrough, you will publish changes to ([first task](https://github.com/Maciejszuchta/Azure-Fundamentals-Workshops/blob/main/Instructions/02-App-services/1-Deploy-custom-web-app-to-app-services-in-vs-code.md)) webapp on Windows App Service Plan. Let's dive in!
 
